@@ -1,0 +1,285 @@
+:root {
+  --bg-dark: #0f172a;
+  --panel-bg: #1e293b;
+  --spot-empty: #22c55e;
+  --spot-occupied: #ef4444;
+  --text-light: #f8fafc;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: system-ui, sans-serif;
+  padding: 20px;
+}
+
+.app-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.screen-indicator {
+  width: 100%;
+  background: #334155;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  color: #94a3b8;
+}
+
+.lot-section {
+  background: var(--panel-bg);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.lot-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  border-left: 4px solid #3b82f6;
+  padding-left: 8px;
+}
+
+.grid-map {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  justify-items: center;
+  background: #0f172a;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.parking-stall {
+  width: 50px;
+  height: 60px;
+  border-radius: 6px;
+  border: 2px dashed #475569;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 2px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.parking-stall.available {
+  background-color: rgba(34, 197, 94, 0.25);
+  border-color: var(--spot-empty);
+  color: #4ade80;
+}
+
+.parking-stall.full {
+  background-color: rgba(239, 68, 68, 0.25);
+  border-color: var(--spot-occupied);
+  color: #f87171;
+}
+
+.car-icon {
+  font-size: 1.1rem;
+}
+
+.legend-bar {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+.box.green { background: var(--spot-empty); }
+.box.red { background: var(--spot-occupied); }
+
+/* Bottom Dock Nav Bar Layout Styling Rules */
+.bottom-nav-dock-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-tab-action {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  cursor: pointer;
+  width: 25%;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-action.active {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.nav-icon-glyph {
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+}
+
+.nav-label-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Chat Input Bar UI Layout Elements */
+.ai-chat-input-row {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.ai-textbox-entry {
+  flex: 1;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.ai-send-btn {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ai-response-chat-bubble {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.bubble-header-tag {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.status-hero-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.stats-counter-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.num-highlight {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.lbl-text {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.profile-badge-card {
+  text-align: center;
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.avatar-placeholder {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.permit-tag-badge {
+  display: inline-block;
+  background: #3b82f6;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-top: 12px;
+}
+
+.rewards-metric-panel {
+  background: #162235;
+  border: 1px dashed #334155;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.pts-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eab308;
+}
+
+.info-panel {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+.info-panel ul {
+  margin-left: 20px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+
